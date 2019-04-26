@@ -1,0 +1,38 @@
+import pepita.*
+import comidas.*
+import masAves.*
+import roque.*
+import susana.*
+
+test "pepita puedeVolar(unosKms)" {
+
+	pepita.comer(alpiste,10)
+	assert.equals(true, pepita.puedeVolar(10))
+	assert.equals(false,pepita.puedeVolar(1000))
+	
+	assert.equals(true, pepita.puedeVolar(29))
+	assert.equals(false,pepita.puedeVolar(41))
+
+}
+
+test "pepon puedeVolar(unosKms)"{
+	
+	pepon.comer(alpiste,20)
+	assert.equals(true, pepon.puedeVolar(10))
+	assert.equals(false, pepon.puedeVolar(1000))
+	
+
+}
+
+test "pipa puedeVolar(unosKms)"{
+	
+	assert.equals(true, pipa.puedeVolar(10))
+	assert.equals(true, pipa.puedeVolar(1000000))
+}
+
+test "los pupilos de roque"{
+	roque.agregarPupilo(pepon)
+	roque.agregarPupilo(pepita)
+	
+	assert.equals(#{pepon, pepita}, roque.pupilos())
+}
